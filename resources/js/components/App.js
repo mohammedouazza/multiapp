@@ -23,10 +23,16 @@ const styleBackTop = {
     fontSize: 25,
 };
 
+let sidebarStatus = localStorage.getItem("sidebar");
+if (!sidebarStatus) {
+    localStorage.setItem("sidebar", false);
+}
+
 function App() {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(sidebarStatus === "true");
 
     const toggle = () => {
+        localStorage.setItem("sidebar", !collapsed);
         setCollapsed(!collapsed);
     };
     return (

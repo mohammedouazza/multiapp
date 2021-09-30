@@ -1,0 +1,27 @@
+.carImage {
+    overflow: hidden;
+    margin-right: 10%;
+    width: 90%;
+    overflow-x: auto;
+    position: relative;
+    -webkit-animation: mymove 10s linear infinite; /* Chrome, Safari, Opera */
+    animation: mymove 10s linear infinite;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {
+        right: 0px;
+    }
+    to {
+        right: -400px;
+    }
+}
+
+@keyframes mymove {
+    from {
+        right: 0px;
+    }
+    to {
+        right: -400px;
+    }
+}

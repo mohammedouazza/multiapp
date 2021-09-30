@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout } from "antd";
 import { Switch, Route } from "react-router-dom";
 import ProfileComponent from "../pages/ProfileComponent";
 import VideoCameraComponent from "../pages/VideoCameraComponent";
 import Home from "../pages/Home";
 import UploadFileComponent from "../pages/UploadFileComponent";
+//import HomeCover from "../../../images/covers/home.webp";
 
 const { Content } = Layout;
 
 function ContentComponent() {
+    const [contentHeight, setContentHeight] = useState(window.innerHeight);
+
+    window.onresize = () => {
+        setContentHeight(window.innerHeight);
+    };
     return (
         <Content
             className="site-layout-background"
             style={{
-                margin: "24px 16px",
                 padding: 24,
-                height: window.innerHeight,
+                minHeight: contentHeight,
+                /*backgroundImage: `url(${HomeCover})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",*/
+                backgroundColor: "#d5d5d5",
             }}
         >
             <Switch>
