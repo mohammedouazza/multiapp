@@ -1,5 +1,10 @@
 import React from "react";
 import { Layout } from "antd";
+import { Switch, Route } from "react-router-dom";
+import ProfileComponent from "../pages/ProfileComponent";
+import VideoCameraComponent from "../pages/VideoCameraComponent";
+import Home from "../pages/Home";
+import UploadFileComponent from "../pages/UploadFileComponent";
 
 const { Content } = Layout;
 
@@ -13,7 +18,20 @@ function ContentComponent() {
                 height: window.innerHeight,
             }}
         >
-            Content
+            <Switch>
+                <Route path="/profile">
+                    <ProfileComponent />
+                </Route>
+                <Route path="/video-camera">
+                    <VideoCameraComponent />
+                </Route>
+                <Route path="/upload-file">
+                    <UploadFileComponent />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
         </Content>
     );
 }
